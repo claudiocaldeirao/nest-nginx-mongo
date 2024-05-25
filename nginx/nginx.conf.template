@@ -1,9 +1,9 @@
 upstream nestjs-api {
-    server nestjs-api:3000;    
+    server nestjs-api:${API_PORT};    
 }
 
 server {
-    listen 3001;
+    listen ${LOAD_BALANCER_PORT};
 
     location / {
         proxy_pass http://nestjs-api;

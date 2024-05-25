@@ -2,8 +2,9 @@ version: '3'
 services:
   nestjs-api:
     build: .
+    env_file: .env
     environment:
-      - PORT=3000
+      - PORT=${API_PORT}
     deploy:
       replicas: 3
     networks:
@@ -11,8 +12,9 @@ services:
 
   nginx:
     build: ./nginx
+    env_file: .env
     ports:
-      - "3001:3001"
+      - "${LOAD_BALANCER_PORT}:${LOAD_BALANCER_PORT}"
     networks:
       - loadbalancing
     depends_on:
