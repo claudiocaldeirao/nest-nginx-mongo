@@ -75,8 +75,17 @@ $ docker container list
 # stop running container
 $ docker stop <container_id>
 
+# stop all containers at once
+$ docker stop $(docker ps -a -q)
+
 # purge images
 $ docker image prune --all --force
+
+# docker-compose to run multiple containers with nginx as load balancer
+$ docker-compose up -d
+
+# stop docker-compose containers
+$ docker-compose down -v
 ```
 
 ## Support

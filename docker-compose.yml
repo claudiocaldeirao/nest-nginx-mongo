@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nestjs-api:
+    build: .
+    environment:
+      - PORT=3000
+    deploy:
+      replicas: 3
+    networks:
+      - loadbalancing
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "3001:3001"
+    networks:
+      - loadbalancing
+    depends_on:
+      - nestjs-api
+
+networks:
+  loadbalancing:
