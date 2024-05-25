@@ -58,6 +58,27 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
+## Docker commands
+```bash
+# build image
+$ docker build -t nest-api:1.0 .
+
+# list images
+$ docker images
+
+# run container
+$ docker run -p 3000:3000 nest-api:1.0 --d
+
+# list running containers
+$ docker container list
+
+# stop running container
+$ docker stop <container_id>
+
+# purge images
+$ docker image prune --all --force
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
