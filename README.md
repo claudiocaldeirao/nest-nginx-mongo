@@ -81,6 +81,9 @@ $ docker stop $(docker ps -a -q)
 # purge images
 $ docker image prune --all --force
 
+# delete all images
+$ docker rmi -f $(sudo docker images -a -q)
+
 # docker-compose to run multiple containers with nginx as load balancer
 $ docker-compose up -d
 
