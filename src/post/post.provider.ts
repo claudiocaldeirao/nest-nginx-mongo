@@ -6,7 +6,7 @@ export const postProviders = [
   {
     provide: POST_MODEL,
     useFactory: (connection: Connection) =>
-      connection.model('Post', PostSchema),
+      connection.model('Post', PostSchema, 'posts'),
     inject: [DATABASE_CONNECTION],
   },
 ];
