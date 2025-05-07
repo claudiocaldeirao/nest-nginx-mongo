@@ -1,13 +1,13 @@
 import * as mongoose from 'mongoose';
 import { DATABASE_CONNECTION } from 'src/common/contants';
-import { config } from '../common/configuration';
+import { ConfigService } from '@nestjs/config';
 
 export const databaseProviders = [
   {
     provide: DATABASE_CONNECTION,
-    useFactory: async (): Promise<typeof mongoose> =>
-      await mongoose.connect(
-        `mongodb://${config.MONGO_USERNAME}:${config.MONGO_PASSWORD}@${config.MONGO_URL}:${config.MONGO_PORT}/${config.MONGO_DATABASE}?authSource=${config.MONGO_AUTH_DATABASE}`,
-      ),
+    useFactory: async (configService: ConfigService) => {
+      return await mongoose.connect(configService.get<string>('MONGO_URI'));
+    },
+    inject: [ConfigService],
   },
 ];
