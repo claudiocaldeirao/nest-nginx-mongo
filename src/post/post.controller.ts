@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { PostsService } from './posts.service';
+import { PostService } from './post.service';
 
 @Controller('posts')
 export class PostsController {
-  constructor(private readonly postsService: PostsService) {}
+  constructor(private readonly postsService: PostService) {}
 
   @Get()
   getPostss(): string {
