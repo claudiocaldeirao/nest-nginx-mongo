@@ -1,0 +1,48 @@
+[
+    {
+      "_id": {"$oid": "645f2a3b4b1d9f6e1a5a2b11"},
+      "title": "Exploring the Future of Web Development",
+      "body": "In this post, we discuss the upcoming trends in frontend and backend development, including frameworks and tools.",
+      "author": "Luiz",
+      "tags": ["web", "development", "frontend", "backend"],
+      "createdAt": {"$date": "2025-05-01T12:00:00Z"},
+      "updatedAt": {"$date": "2025-05-01T12:00:00Z"},
+      "likes": 42,
+      "comments": [
+        {
+          "user": "ana_dev",
+          "comment": "Great insights! Looking forward to more posts like this.",
+          "date": {"$date": "2025-05-01T14:00:00Z"}
+        }
+      ]
+    },
+    {
+      "_id": {"$oid": "645f2a3b4b1d9f6e1a5a2b12"},
+      "title": "10 Tips for Writing Clean Code",
+      "body": "Writing clean code is essential for maintainability. Here are 10 practical tips to improve your codebase.",
+      "author": "carol.code",
+      "tags": ["clean code", "best practices"],
+      "createdAt": {"$date": "2025-04-25T10:00:00Z"},
+      "updatedAt": {"$date": "2025-04-25T10:00:00Z"},
+      "likes": 58,
+      "comments": []
+    },
+    {
+      "_id": {"$oid": "645f2a3b4b1d9f6e1a5a2b13"},
+      "title": "My Journey Learning Go",
+      "body": "This is a summary of my experiences and challenges while learning the Go programming language.",
+      "author": "luiz",
+      "tags": ["golang", "learning", "backend"],
+      "createdAt": {"$date": "2025-03-30T08:30:00Z"},
+      "updatedAt": {"$date": "2025-04-01T09:00:00Z"},
+      "likes": 31,
+      "comments": [
+        {
+          "user": "dev_mario",
+          "comment": "Muito bom! Também estou começando com Go.",
+          "date": {"$date": "2025-04-01T10:15:00Z"}
+        }
+      ]
+    }
+  ]
+  

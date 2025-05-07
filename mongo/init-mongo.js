@@ -1,3 +1,3 @@
-db.createCollection('restaurants');
+db.createCollection('posts');
 
-db.restaurants.createIndex({ location: '2dsphere' });
+db.posts.createIndex({ author: 1 });
