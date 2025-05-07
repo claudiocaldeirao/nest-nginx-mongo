@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export class RestaurantService {
-  getRestaurants(): string {
+export class PostsService {
+  getPosts(): string {
     return '@todo: implement logics';
   }
 }
