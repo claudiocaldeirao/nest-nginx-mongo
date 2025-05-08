@@ -9,6 +9,11 @@ services:
       - loadbalancing
     depends_on:
       - mongo
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: "0.6"
+    #       memory: "200MB"
 
   nginx:
     build: ./nginx
@@ -19,6 +24,11 @@ services:
       - loadbalancing
     depends_on:
       - nestjs-api
+    deploy:
+      resources:
+        limits:
+          cpus: "0.17"
+          memory: "10MB"
 
   mongo: 
     build: ./mongo
@@ -33,6 +43,11 @@ services:
       - mongodata:/data/db
     networks:
       - loadbalancing
+    deploy:
+      resources:
+        limits:
+          cpus: "0.13"
+          memory: "140MB"
 
 volumes:
   mongodata:
