@@ -1,14 +1,14 @@
-version: '3'
 services:
   nestjs-api:
     build: .
     env_file: .env
     environment:
       - PORT=${API_PORT}
-    deploy:
-      replicas: 3
+      - MONGO_URI=${MONGO_URI}
     networks:
       - loadbalancing
+    depends_on:
+      - mongo
 
   nginx:
     build: ./nginx
@@ -31,6 +31,8 @@ services:
       - ${MONGO_PORT}:${MONGO_PORT}
     volumes:
       - mongodata:/data/db
+    networks:
+      - loadbalancing
 
 volumes:
   mongodata:

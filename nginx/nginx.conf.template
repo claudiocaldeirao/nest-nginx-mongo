@@ -5,7 +5,11 @@ upstream nestjs-api {
 server {
     listen ${LOAD_BALANCER_PORT};
 
-    location / {
-        proxy_pass http://nestjs-api;
+    location /health {
+        proxy_pass http://nestjs-api/health;
+    }
+
+    location /posts {
+        proxy_pass http://nestjs-api/posts;
     }
 }
